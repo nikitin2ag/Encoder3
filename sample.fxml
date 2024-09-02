@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox minWidth="550.0" style="-fx-background-color: #F5F5F5;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <HBox alignment="CENTER">
+         <children>
+            <VBox alignment="TOP_CENTER">
+               <children>
+                  <Label text="Выберите исходный файл:">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin></Label>
+                  <Button fx:id="btnSourceFile" mnemonicParsing="false" onAction="#BtnSourceFileAction" prefWidth="170.0" text="Шифруемый файл">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin></Button>
+                  <Label text="Выберите файл ключа:">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Button fx:id="btnKeyFile" mnemonicParsing="false" onAction="#BtnKeyFileAction" prefWidth="60.0" text="Ключ">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </HBox.margin>
+            </VBox>
+            <Separator orientation="VERTICAL" />
+            <VBox>
+               <children>
+                  <Label text="Выберите режим AES:">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <RadioButton fx:id="rbECB" mnemonicParsing="false" text="ECB">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="mode" />
+                     </toggleGroup>
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </RadioButton>
+                  <RadioButton fx:id="rbCBC" mnemonicParsing="false" selected="true" text="CBC" toggleGroup="$mode" />
+                  <RadioButton fx:id="rbCFB" mnemonicParsing="false" text="CFB" toggleGroup="$mode">
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </RadioButton>
+                  <RadioButton fx:id="rbOFB" mnemonicParsing="false" text="OFB" toggleGroup="$mode" />
+                  <RadioButton fx:id="rbPCBC" layoutX="56.0" layoutY="101.0" mnemonicParsing="false" text="PCBC">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="mode1" />
+                     </toggleGroup>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </RadioButton>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </HBox.margin>
+            </VBox>
+            <Separator orientation="VERTICAL" />
+            <VBox alignment="TOP_CENTER">
+               <children>
+                  <Label text="Выберите действие:" />
+                  <Button fx:id="btnEncrypted" mnemonicParsing="false" onAction="#BtnEncryptedAction" prefWidth="120.0" text="Зашифровать">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin></Button>
+                  <Button fx:id="btnDecrypted" mnemonicParsing="false" onAction="#BtnDecryptedAction" prefWidth="120.0" text="Дешифровать" />
+               </children>
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <ToolBar style="-fx-background-color: #E0E0E0;">
+         <items>
+            <VBox>
+               <children>
+                  <HBox>
+                     <children>
+                        <Label text="Путь исходного файла:">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelSourceFilePath" text="...">
+                           <font>
+                              <Font size="12.0" />
+                           </font></Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Label text="Путь файла ключа:">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelKeyFilePath" text="...">
+                           <font>
+                              <Font size="12.0" />
+                           </font></Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="3.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+         </items>
+      </ToolBar>
+   </children>
+</VBox>
