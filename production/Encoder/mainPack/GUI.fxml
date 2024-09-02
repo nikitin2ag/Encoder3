@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" style="-fx-background-color: #33CCCC; -fx-background-insets: 0;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainPack.Controller">
+    <Label fx:id="label" contentDisplay="RIGHT" layoutX="89.0" layoutY="39.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="186.0" text="Режим: КОДИРОВАНИЕ">
+      <font>
+         <Font name="Calibri Bold" size="16.0" />
+      </font></Label>
+    <ComboBox fx:id="boxCodes" layoutX="36.0" layoutY="95.0" prefHeight="25.0" prefWidth="237.0" promptText="Выберите алгоритм кодирования" style="-fx-border-color: #808080; -fx-background-insets: 0;">
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor></ComboBox>
+    <TextArea fx:id="infoText" editable="false" layoutX="20.0" layoutY="142.0" prefHeight="260.0" prefWidth="268.0" style="-fx-border-color: #00ff;" wrapText="true">
+      <font>
+         <Font name="Calibri" size="14.0" />
+      </font></TextArea>
+    <PasswordField fx:id="password" disable="true" layoutX="29.0" layoutY="415.0" prefHeight="42.0" prefWidth="200.0" promptText="Ключ шифрования" style="-fx-border-color: #808080;">
+      <font>
+         <Font name="Calibri Bold" size="21.0" />
+      </font></PasswordField>
+    <TextArea fx:id="inputtedText" layoutX="320.0" layoutY="24.0" prefHeight="196.0" prefWidth="290.0" promptText="Введите исходный текст" style="-fx-border-color: #00FF;" wrapText="true">
+      <font>
+         <Font name="Calibri Bold" size="20.0" />
+      </font></TextArea>
+    <Button fx:id="encodeBtn" layoutX="488.0" layoutY="185.0" mnemonicParsing="false" onAction="#onEncode" prefHeight="35.0" prefWidth="122.0" style="-fx-border-color: #00FF; -fx-background-insets: 0;" text="Закодировать" textAlignment="CENTER" wrapText="true">
+      <font>
+         <Font name="Calibri Bold" size="15.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor></Button>
+    <TextArea fx:id="transformedText" disable="true" editable="false" layoutX="320.0" layoutY="261.0" prefHeight="196.0" prefWidth="290.0" promptText="Преобразованный текст" style="-fx-border-color: #00FF;" wrapText="true">
+      <font>
+         <Font name="Calibri Bold" size="20.0" />
+      </font></TextArea>
+    <Button fx:id="saveBtn" disable="true" layoutX="488.0" layoutY="422.0" mnemonicParsing="false" onAction="#onFileSave" prefHeight="35.0" prefWidth="122.0" style="-fx-border-color: #00FF; -fx-background-insets: 0;" text="Сохранить" textAlignment="CENTER">
+      <font>
+         <Font name="Calibri Bold" size="15.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor></Button>
+    <ToggleButton fx:id="langTBtn" contentDisplay="CENTER" layoutX="320.0" layoutY="427.0" mnemonicParsing="false" onAction="#morseDecode" prefHeight="30.0" prefWidth="51.0" style="-fx-border-color: #00ff; -fx-background-insets: 0;" textAlignment="CENTER" visible="false" wrapText="true">
+      <font>
+         <Font name="Calibri Bold" size="15.0" />
+      </font></ToggleButton>
+    <ToggleButton fx:id="changeEncodingRegimeTBtn" cache="true" layoutX="36.0" layoutY="29.0" mnemonicParsing="false" onAction="#onChangeRegime" prefHeight="17.0" prefWidth="26.0" snapToPixel="false" style="-fx-border-color: #808080; -fx-background-insets: 0;">
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor></ToggleButton>
+    <ToggleButton fx:id="showPassword" disable="true" ellipsisString="" layoutX="229.0" layoutY="415.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="26.0" style="-fx-border-color: #808080; -fx-background-insets: 0;" />
+
+</AnchorPane>
